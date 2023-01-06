@@ -1,0 +1,41 @@
+cabal-version:      2.4
+name:               my-project
+version:            0.1.0.0
+homepage:           https://github.com/change-metrics/haskell-boilerplate#README.md
+bug-reports:        https://github.com/change-metrics/haskell-boilerplate/issues
+synopsis:           My Project
+description:        My project description
+license-file:       LICENSE
+author:             You Name
+maintainer:         myemail@domain.local
+copyright:          2023 You
+category:           Game
+extra-source-files:
+    CHANGELOG.md
+    README.md
+
+common common-options
+    default-language: Haskell2010
+    default-extensions: OverloadedStrings
+                      , RecordWildCards
+                      , NamedFieldPuns
+                      , DeriveGeneric
+    ghc-options:      -Wall
+                      -threaded
+
+    build-depends:    base < 5
+
+library
+    import:           common-options
+    exposed-modules:  Tui.Cli
+                    , Engine.Main
+    build-depends:    text
+    hs-source-dirs:   src
+
+executable my-projet-exe
+    import:           common-options
+    main-is:          Main.hs
+
+    build-depends:    my-project
+
+    hs-source-dirs:   app
