@@ -26,6 +26,7 @@
           pkgs.weeder
           pkgs.hlint
           pkgs.fourmolu
+          pkgs.ghcid
         ];
       };
     };
